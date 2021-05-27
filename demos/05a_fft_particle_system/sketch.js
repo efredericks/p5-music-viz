@@ -17,7 +17,8 @@ function setup() {
   c = createCanvas(windowWidth, windowHeight);
   noStroke();
 
-  soundFile = createAudio('../../music/Broke_For_Free_-_01_-_As_Colorful_As_Ever.mp3');
+  soundFile = createAudio('../../music/codeBeatsDemo.mp3');
+  //soundFile = createAudio('../../music/Broke_For_Free_-_01_-_As_Colorful_As_Ever.mp3');
   mic = new p5.AudioIn();
   mic.start();
 
@@ -108,7 +109,8 @@ function keyPressed() {
 // To prevent feedback, mic doesnt send its output.
 // So we need to tell fft to listen to the mic, and then switch back.
 function toggleInput() {
-  if (soundFile.isPlaying() ) {
+ // if (soundFile.isPlaying() ) {
+  if (soundFile._playing ) {
     soundFile.pause();
     mic.start();
     fft.setInput(mic);

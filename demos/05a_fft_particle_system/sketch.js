@@ -38,6 +38,10 @@ function setup() {
 function draw() {
   background(0, 0, 0, 100);
 
+  textSize(48);
+  fill(255);
+  text("T to toggle mic/audio", 10, 10)
+
   // returns an array with [binCount] amplitude readings from lowest to highest frequencies
   var spectrum = fft.analyze(binCount);
 
